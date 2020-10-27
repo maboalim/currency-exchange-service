@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Exchange Value bean which will be returned for exchange rate API
+ * 
  * @author Mina
  *
  */
@@ -46,6 +47,11 @@ public class ExchangeValue {
 
 	public void setRate(BigDecimal rate) {
 		this.rate = rate;
+	}
+
+	@Override
+	public String toString() {
+		return "ExchangeValue [fromCurrency=" + fromCurrency + ", toCurrency=" + toCurrency + ", rate=" + rate + "]";
 	}
 
 }

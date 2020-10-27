@@ -1,5 +1,7 @@
 package com.aggroup.microservice.currencyexchangeservice.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +18,12 @@ public class CurrencyExchangeController {
 	@Qualifier("ExchangeServiceRate")
 	CurrencyExchangeService CurrencyExchangeService;
 
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 	@GetMapping("currency-exchange/from/{fromCurrency}/to/{toCurrency}")
 	public ExchangeValue retrieveExchangeValue(@PathVariable String fromCurrency, @PathVariable String toCurrency) {
-		return CurrencyExchangeService.getCurrencyExchangeRate(fromCurrency, toCurrency);
+		ExchangeValue exchangeValue = CurrencyExchangeService.getCurrencyExchangeRate(fromCurrency, toCurrency);
+		logger.info("ExchangeValue -> {}", exchangeValue);
+		return exchangeValue;
 	}
 }

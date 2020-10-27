@@ -16,8 +16,5 @@ public class Configuration {
 	public void setApiURL(String apiURL) {
 		this.apiURL = apiURL;
 	}
-	
-	
-	
 
 }

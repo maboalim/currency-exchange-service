@@ -20,12 +20,14 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
 
 	@Autowired
 	Configuration configuration;
-	
+
 	@Autowired
 	private CurrencyExchangeFeignProxy proxy;
 
 	/**
-	 * This is the old way to call external APIs with rest template but in microservice app, it should be feign integrated with ribbon and naming server
+	 * This is the old way to call external APIs with rest template but in
+	 * microservice app, it should be feign integrated with ribbon and naming server
+	 * 
 	 * @param fromCurrency
 	 * @param toCurrency
 	 * @return
@@ -38,9 +40,10 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
 		vars.put("symbols", toCurrency.toUpperCase());
 		return restTemplate.getForObject(configuration.getApiURL(), ExchangeRate.class, vars);
 	}
-	
+
 	/**
 	 * Retrieve exchange information using feign proxy
+	 * 
 	 * @param fromCurrency
 	 * @param toCurrency
 	 * @return

@@ -10,6 +10,7 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	ResponseEntity<String> onOtherException(Exception exception) {
-		return new ResponseEntity<>("Unsupported currency, you can use USD, EUR, ZAR, CAD, CHF, GBP, JPY", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>("Unsupported currency, you can use USD, EUR, ZAR, CAD, CHF, GBP, JPY",
+				HttpStatus.BAD_REQUEST);
 	}
 }

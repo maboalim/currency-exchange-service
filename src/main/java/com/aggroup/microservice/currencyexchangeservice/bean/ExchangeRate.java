@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 /**
- * Exchange rate bean as what will be received from Currency Exchange Provider 
+ * Exchange rate bean as what will be received from Currency Exchange Provider
+ * 
  * @author Mina
  *
  */
