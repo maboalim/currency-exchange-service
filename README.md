@@ -81,5 +81,5 @@ Tested inside those projects:
 - Zuul api gateway
 - Spring cloud sleuth to add unique ID to logs
 - Zipkin distributed tracing system using Rabbit MQ [required rabbitMQ and zipkin to be running]
-- Hystrix and resilience circle breaker for fault tolerance.
+- Hystrix and resilience4j circuit breaker for fault tolerance.
 
